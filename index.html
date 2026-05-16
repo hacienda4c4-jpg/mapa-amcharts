@@ -7,68 +7,72 @@
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="2487.3">
   <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
   </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="es"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;title&gt;Mapa amCharts&lt;/title&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;script src="https://cdn.amcharts.com/lib/5/index.js"&gt;&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1">&lt;script src="https://cdn.amcharts.com/lib/5/map.js"&gt;&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1">&lt;script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"&gt;&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1">&lt;script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"&gt;&lt;/script&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;style&gt;</span></p>
-<p class="p1"><span class="s1">html, body {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>margin: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>width: 100%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>height: 100%;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">#chartdiv {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>width: 100%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>height: 100vh;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;div id="chartdiv"&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;script&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">am5.ready(function () {</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">var root = am5.Root.new("chartdiv");</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">root.setThemes([</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>am5themes_Animated.new(root)</span></p>
-<p class="p1"><span class="s1">]);</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">var chart = root.container.children.push(</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>am5map.MapChart.new(root, {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>projection: am5map.geoMercator()</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>})</span></p>
-<p class="p1"><span class="s1">);</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">var polygonSeries = chart.series.push(</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>am5map.MapPolygonSeries.new(root, {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>geoJSON: am5geodata_worldLow</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>})</span></p>
-<p class="p1"><span class="s1">);</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">});</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;title&gt;Mapa amCharts&lt;/title&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script src="https://cdn.amcharts.com/lib/5/index.js"&gt;&lt;/script&gt;</p>
+<p class="p1">&lt;script src="https://cdn.amcharts.com/lib/5/map.js"&gt;&lt;/script&gt;</p>
+<p class="p1">&lt;script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"&gt;&lt;/script&gt;</p>
+<p class="p1">&lt;script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"&gt;&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1">html, body {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height: 100%;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">#chartdiv {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height: 100vh;</p>
+<p class="p1">}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="chartdiv"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">am5.ready(function () {</p>
+<p class="p2"><br></p>
+<p class="p1">var root = am5.Root.new("chartdiv");</p>
+<p class="p2"><br></p>
+<p class="p1">root.setThemes([</p>
+<p class="p1"><span class="Apple-converted-space">  </span>am5themes_Animated.new(root)</p>
+<p class="p1">]);</p>
+<p class="p2"><br></p>
+<p class="p1">var chart = root.container.children.push(</p>
+<p class="p1"><span class="Apple-converted-space">  </span>am5map.MapChart.new(root, {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>projection: am5map.geoMercator()</p>
+<p class="p1"><span class="Apple-converted-space">  </span>})</p>
+<p class="p1">);</p>
+<p class="p2"><br></p>
+<p class="p1">var polygonSeries = chart.series.push(</p>
+<p class="p1"><span class="Apple-converted-space">  </span>am5map.MapPolygonSeries.new(root, {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>geoJSON: am5geodata_worldLow</p>
+<p class="p1"><span class="Apple-converted-space">  </span>})</p>
+<p class="p1">);</p>
+<p class="p2"><br></p>
+<p class="p1">polygonSeries.mapPolygons.template.setAll({</p>
+<p class="p1"><span class="Apple-converted-space">  </span>tooltipText: "{name}",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>interactive: true</p>
+<p class="p1">});</p>
+<p class="p2"><br></p>
+<p class="p1">});</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
 </body>
 </html>
