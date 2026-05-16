@@ -13,19 +13,55 @@
   </style>
 </head>
 <body>
-<p class="p1"><span class="s1">am5themes_Animated.new(root)</span></p>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="es"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;title&gt;Mapa amCharts&lt;/title&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;script src="https://cdn.amcharts.com/lib/5/index.js"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;script src="https://cdn.amcharts.com/lib/5/map.js"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"&gt;&lt;/script&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;style&gt;</span></p>
+<p class="p1"><span class="s1">html, body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>margin: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>height: 100%;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">#chartdiv {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>height: 100vh;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div id="chartdiv"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;script&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">am5.ready(function () {</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">var root = am5.Root.new("chartdiv");</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">root.setThemes([</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>am5themes_Animated.new(root)</span></p>
 <p class="p1"><span class="s1">]);</span></p>
 <p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1">var chart = root.container.children.push(</span></p>
-<p class="p1"><span class="s1">am5map.MapChart.new(root, {</span></p>
-<p class="p1"><span class="s1">projection: am5map.geoMercator()</span></p>
-<p class="p1"><span class="s1">})</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>am5map.MapChart.new(root, {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>projection: am5map.geoMercator()</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>})</span></p>
 <p class="p1"><span class="s1">);</span></p>
 <p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1">var polygonSeries = chart.series.push(</span></p>
-<p class="p1"><span class="s1">am5map.MapPolygonSeries.new(root, {</span></p>
-<p class="p1"><span class="s1">geoJSON: am5geodata_worldLow</span></p>
-<p class="p1"><span class="s1">})</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>am5map.MapPolygonSeries.new(root, {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>geoJSON: am5geodata_worldLow</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>})</span></p>
 <p class="p1"><span class="s1">);</span></p>
 <p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1">});</span></p>
