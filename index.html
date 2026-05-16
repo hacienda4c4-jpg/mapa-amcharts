@@ -26,28 +26,33 @@ html, body, #chartdiv {
 
 am5.ready(function() {
 
-var root = am5.Root.new("chartdiv");
+  var root = am5.Root.new("chartdiv");
 
-root.setThemes([
-  am5themes_Animated.new(root)
-]);
+  root.setThemes([
+    am5themes_Animated.new(root)
+  ]);
 
-var chart = root.container.children.push(
-  am5map.MapChart.new(root, {
-    projection: am5map.geoMercator()
-  })
-);
+  var chart = root.container.children.push(
+    am5map.MapChart.new(root, {
+      projection: am5map.geoMercator()
+    })
+  );
 
-var polygonSeries = chart.series.push(
-  am5map.MapPolygonSeries.new(root, {
-    geoJSON: am5geodata_worldLow
-  })
-);
+  var polygonSeries = chart.series.push(
+    am5map.MapPolygonSeries.new(root, {
+      geoJSON: am5geodata_worldLow
+    })
+  );
 
-polygonSeries.mapPolygons.template.setAll({
-  tooltipText: "{name}",
-  interactive: true
-});
+  polygonSeries.mapPolygons.template.setAll({
+    tooltipText: "{name}",
+    interactive: true,
+    fill: am5.color(0x74B266)
+  });
+
+  polygonSeries.mapPolygons.template.states.create("hover", {
+    fill: am5.color(0x367B25)
+  });
 
 });
 
