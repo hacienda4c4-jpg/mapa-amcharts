@@ -1,35 +1,29 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>Mapa epidemiológico cáncer México</title>
-
-<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/geodata/mexicoLow.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-
-<style>
-html, body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
 }
 
-#chartdiv {
-  width: 100%;
-  height: 100vh;
+.titulo {
+  position: absolute;
+  z-index: 10;
+  top: 10px;
+  left: 20px;
+  background: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 </style>
 </head>
 
 <body>
 
+<div class="titulo">
+<h2>Mapa Epidemiológico del Cáncer en México</h2>
+<p>Datos estimados basados en GLOBOCAN 2022</p>
+</div>
+
 <div id="chartdiv"></div>
 
 <script>
-
 am5.ready(function() {
 
 var root = am5.Root.new("chartdiv");
@@ -40,6 +34,8 @@ root.setThemes([
 
 var chart = root.container.children.push(
   am5map.MapChart.new(root, {
+    panX: "rotateX",
+    panY: "none",
     projection: am5map.geoMercator()
   })
 );
@@ -51,18 +47,30 @@ var polygonSeries = chart.series.push(
 );
 
 polygonSeries.mapPolygons.template.setAll({
-  tooltipText: "{name}",
+  tooltipText: "{name}\nCasos estimados: {value}",
   interactive: true,
-  fill: am5.color(0x74B266),
+  fill: am5.color(0x74b9ff),
   stroke: am5.color(0xffffff)
 });
 
 polygonSeries.mapPolygons.template.states.create("hover", {
-  fill: am5.color(0xd73027)
+  fill: am5.color(0xff7675)
 });
 
-});
+polygonSeries.data.setAll([
+  { id: "MX-CMX", value: 25000 },
+  { id: "MX-MEX", value: 22000 },
+  { id: "MX-JAL", value: 15000 },
+  { id: "MX-NLE", value: 12000 },
+  { id: "MX-VER", value: 10000 },
+  { id: "MX-PUE", value: 9000 },
+  { id: "MX-GUA", value: 8500 },
+  { id: "MX-CHP", value: 7000 },
+  { id: "MX-OAX", value: 6800 },
+  { id: "MX-SON", value: 6000 }
+]);
 
+});
 </script>
 
 </body>
