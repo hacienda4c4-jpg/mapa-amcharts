@@ -15,7 +15,6 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  font-family: Arial;
 }
 
 #chartdiv {
@@ -52,53 +51,14 @@ var polygonSeries = chart.series.push(
 );
 
 polygonSeries.mapPolygons.template.setAll({
-  tooltipText: "{name}\nIncidencia: {value}",
+  tooltipText: "{name}",
   interactive: true,
-  strokeWidth: 1
+  fill: am5.color(0x74B266),
+  stroke: am5.color(0xffffff)
 });
 
-polygonSeries.data.setAll([
-
-{ id: "MX-CMX", value: "Alta incidencia" },
-{ id: "MX-MEX", value: "Alta incidencia" },
-{ id: "MX-JAL", value: "Alta incidencia" },
-{ id: "MX-NLE", value: "Alta incidencia" },
-
-{ id: "MX-VER", value: "Media incidencia" },
-{ id: "MX-PUE", value: "Media incidencia" },
-{ id: "MX-GUA", value: "Media incidencia" },
-{ id: "MX-MIC", value: "Media incidencia" },
-
-{ id: "MX-OAX", value: "Baja incidencia" },
-{ id: "MX-CHP", value: "Baja incidencia" },
-{ id: "MX-GRO", value: "Baja incidencia" }
-
-]);
-
-polygonSeries.mapPolygons.template.adapters.add("fill", function(fill, target) {
-
-var dataItem = target.dataItem;
-
-if (dataItem) {
-
-var value = dataItem.dataContext.value;
-
-if (value === "Alta incidencia") {
-  return am5.color(0xd73027);
-}
-
-if (value === "Media incidencia") {
-  return am5.color(0xfc8d59);
-}
-
-if (value === "Baja incidencia") {
-  return am5.color(0x91cf60);
-}
-
-}
-
-return am5.color(0xd9d9d9);
-
+polygonSeries.mapPolygons.template.states.create("hover", {
+  fill: am5.color(0xd73027)
 });
 
 });
