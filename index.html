@@ -7,11 +7,8 @@
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="2487.3">
   <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Courier; -webkit-text-stroke: #000000}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Courier; -webkit-text-stroke: #000000; min-height: 16.0px}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Courier; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Courier; -webkit-text-stroke: #000000; min-height: 16.0px}
     span.s1 {font-kerning: none}
   </style>
 </head>
@@ -49,38 +46,35 @@
 <p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1">am5.ready(function () {</span></p>
 <p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">var root = am5.Root.new("chartdiv");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var root = am5.Root.new("chartdiv");</span></p>
 <p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">root.setThemes([</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>am5themes_Animated.new(root)</span></p>
-<p class="p1"><span class="s1">]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>root.setThemes([</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>am5themes_Animated.new(root)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>]);</span></p>
 <p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">var chart = root.container.children.push(</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>am5map.MapChart.new(root, {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>projection: am5map.geoMercator()</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>})</span></p>
-<p class="p1"><span class="s1">);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var chart = root.container.children.push(</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>am5map.MapChart.new(root, {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>projection: am5map.geoMercator()</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>})</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>);</span></p>
 <p class="p2"><span class="s1"></span><br></p>
-<p class="p3"><span class="s1">var polygonSeries = chart.series.push(</span></p>
-<p class="p4"><span class="s1"></span><br></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">  </span>am5map.MapPolygonSeries.new(root, {</span></p>
-<p class="p4"><span class="s1"></span><br></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>geoJSON: am5geodata_worldLow</span></p>
-<p class="p4"><span class="s1"></span><br></p>
-<p class="p3"><span class="s1"><span class="Apple-converted-space">  </span>})</span></p>
-<p class="p4"><span class="s1"></span><br></p>
-<p class="p3"><span class="s1">);</span></p>
-<p class="p4"><span class="s1"></span><br></p>
-<p class="p5"><span class="s1">polygonSeries.mapPolygons.template.setAll({</span></p>
-<p class="p5"><span class="s1">tooltipText: "{name}",</span></p>
-<p class="p5"><span class="s1">interactive: true</span></p>
-<p class="p5"><span class="s1">});</span></p>
-<p class="p4"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var polygonSeries = chart.series.push(</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>am5map.MapPolygonSeries.new(root, {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>geoJSON: am5geodata_worldLow</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>})</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>);</span></p>
 <p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>polygonSeries.mapPolygons.template.setAll({</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>tooltipText: "{name}",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>interactive: true</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">});<span class="Apple-converted-space"> </span></span></p>
 <p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1">&lt;/script&gt;</span></p>
 <p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1">&lt;/body&gt;</span></p>
 <p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
 </body>
 </html>
