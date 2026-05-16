@@ -2,18 +2,25 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Mapa amCharts</title>
+<title>Mapa epidemiológico cáncer México</title>
 
 <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/geodata/mexicoLow.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
 <style>
-html, body, #chartdiv {
+html, body {
+  margin: 0;
   width: 100%;
   height: 100%;
-  margin: 0;
+  overflow: hidden;
+  font-family: Arial;
+}
+
+#chartdiv {
+  width: 100%;
+  height: 100vh;
 }
 </style>
 </head>
@@ -26,33 +33,73 @@ html, body, #chartdiv {
 
 am5.ready(function() {
 
-  var root = am5.Root.new("chartdiv");
+var root = am5.Root.new("chartdiv");
 
-  root.setThemes([
-    am5themes_Animated.new(root)
-  ]);
+root.setThemes([
+  am5themes_Animated.new(root)
+]);
 
-  var chart = root.container.children.push(
-    am5map.MapChart.new(root, {
-      projection: am5map.geoMercator()
-    })
-  );
+var chart = root.container.children.push(
+  am5map.MapChart.new(root, {
+    projection: am5map.geoMercator()
+  })
+);
 
-  var polygonSeries = chart.series.push(
-    am5map.MapPolygonSeries.new(root, {
-      geoJSON: am5geodata_worldLow
-    })
-  );
+var polygonSeries = chart.series.push(
+  am5map.MapPolygonSeries.new(root, {
+    geoJSON: am5geodata_mexicoLow
+  })
+);
 
-  polygonSeries.mapPolygons.template.setAll({
-    tooltipText: "{name}",
-    interactive: true,
-    fill: am5.color(0x74B266)
-  });
+polygonSeries.mapPolygons.template.setAll({
+  tooltipText: "{name}\nIncidencia: {value}",
+  interactive: true,
+  strokeWidth: 1
+});
 
-  polygonSeries.mapPolygons.template.states.create("hover", {
-    fill: am5.color(0x367B25)
-  });
+polygonSeries.data.setAll([
+
+{ id: "MX-CMX", value: "Alta incidencia" },
+{ id: "MX-MEX", value: "Alta incidencia" },
+{ id: "MX-JAL", value: "Alta incidencia" },
+{ id: "MX-NLE", value: "Alta incidencia" },
+
+{ id: "MX-VER", value: "Media incidencia" },
+{ id: "MX-PUE", value: "Media incidencia" },
+{ id: "MX-GUA", value: "Media incidencia" },
+{ id: "MX-MIC", value: "Media incidencia" },
+
+{ id: "MX-OAX", value: "Baja incidencia" },
+{ id: "MX-CHP", value: "Baja incidencia" },
+{ id: "MX-GRO", value: "Baja incidencia" }
+
+]);
+
+polygonSeries.mapPolygons.template.adapters.add("fill", function(fill, target) {
+
+var dataItem = target.dataItem;
+
+if (dataItem) {
+
+var value = dataItem.dataContext.value;
+
+if (value === "Alta incidencia") {
+  return am5.color(0xd73027);
+}
+
+if (value === "Media incidencia") {
+  return am5.color(0xfc8d59);
+}
+
+if (value === "Baja incidencia") {
+  return am5.color(0x91cf60);
+}
+
+}
+
+return am5.color(0xd9d9d9);
+
+});
 
 });
 
